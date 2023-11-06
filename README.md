@@ -2,9 +2,9 @@
 Browser based Audio-player with backend in termux. 
 
 ## Table of contents
-- [Features] (#features)
-- [Technologies Used] (#technologies used)
-- [Installation] (#installation)
+- Features
+- Technologies Used
+- Installation
 
 ## Features
 - Play Audio: Users can select and play audio files from a list.
