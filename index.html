@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AUDIO PLAYER</title>
+<style>
+body {
+  background: linear-gradient(to right, #FFA500, #00FF00);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+h1{
+	color: black;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.audio-player {
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#song-list {
+  display: flex; /* Change to flex container */
+  align-items: center;
+  justify-content: center; /* Center the items horizontally */
+  flex-wrap: wrap; /* Allow items to wrap to the next line if they exceed the container width */
+}
+
+.song-item {
+  display: flex; /* Change to flex item */
+  align-items: center;
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.song-item img {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.song-item:hover {
+  background-color: #f0f0f0;
+  border-color: #007bff;
+}
+
+.song-item.playing{
+	background-color: lightblue;
+	border-color: lightblue;
+	color: black;
+}
+
+.navigation-buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+  <h1>Audio player</h1>
+  <div class="audio-player">
+    <label for="audio-select">Select Audio File:</label>
+    <select id="audio-select">
+      <option value="audio/1.mp3" data-thumbnail="image/img.jpeg">1</option>
+      <option value="audio/2.mp3" data-thumbnail="image/img.jpeg">2</option>
+      <option value="audio/3.mp3" data-thumbnail="image/img.jpeg">3</option>
+      <option value="audio/4.mp3" data-thumbnail="image/img.jpeg">4</option>
+      <option value="audio/5.mp3" data-thumbnail="image/img.jpeg">5</option>
+      <option value="audio/6.mp3" data-thumbnail="image/img.jpeg">6</option>
+      <option value="audio/7.mp3" data-thumbnail="image/img.jpeg">7</option>
+      <option value="audio/8.mp3" data-thumbnail="image/img.jpeg">8</option>
+      <option value="audio/9.mp3" data-thumbnail="image/img.jpeg">9</option>
+      <option value="audio/10.mp3" data-thumbnail="image/img.jpeg">10</option>
+      <option value="audio/11.mp3" data-thumbnail="image/img.jpeg">11</option>
+      <option value="audio/12.mp3" data-thumbnail="image/img.jpeg">12</option>
+      <option value="audio/13.mp3" data-thumbnail="image/img.jpeg">13</option>
+      <option value="audio/14.mp3" data-thumbnail="image/img.jpeg">14</option>
+      <option value="audio/15.mp3" data-thumbnail="image/img.jpeg">15</option>
+      <option value="audio/16.mp3" data-thumbnail="image/img.jpeg">16</option>
+      <option value="audio/17.mp3" data-thumbnail="image/img.jpeg">17</option>
+      <option value="audio/18.mp3" data-thumbnail="image/img.jpeg">18</option>
+      <option value="audio/19.mp3" data-thumbnail="image/img.jpeg">19</option>
+      <option value="audio/20.mp3" data-thumbnail="image/img.jpeg">20</option>
+      <option value="audio/21.mp3" data-thumbnail="image/img.jpeg">21</option>
+      <option value="audio/22.mp3" data-thumbnail="image/img.jpeg">22</option>
+      <option value="audio/23.mp3" data-thumbnail="image/img.jpeg">23</option>
+      <option value="audio/24.mp3" data-thumbnail="image/img.jpeg">24</option>
+      <option value="audio/25.mp3" data-thumbnail="image/img.jpeg">25</option>
+      <option value="audio/26.mp3" data-thumbnail="image/img.jpeg">26</option>
+      <option value="audio/27.mp3" data-thumbnail="image/img.jpeg">27</option>
+      <option value="audio/28.mp3" data-thumbnail="image/img.jpeg">28</option>
+      <option value="audio/29.mp3" data-thumbnail="image/img.jpeg">29</option>
+      <option value="audio/30.mp3" data-thumbnail="image/img.jpeg">30</option>
+      <option value="audio/31.mp3" data-thumbnail="image/img.jpeg">31</option>
+      <option value="audio/32.mp3" data-thumbnail="image/img.jpeg">32</option>
+      <option value="audio/33.mp3" data-thumbnail="image/img.jpeg">33</option>
+      <option value="audio/34.mp3" data-thumbnail="image/img.jpeg">34</option>
+      <option value="audio/35.mp3" data-thumbnail="image/img.jpeg">35</option>
+      <option value="audio/36.mp3" data-thumbnail="image/img.jpeg">36</option>
+      <option value="audio/37.mp3" data-thumbnail="image/img.jpeg">37</option>
+      <option value="audio/38.mp3" data-thumbnail="image/img.jpeg">38</option>
+      <option value="audio/39.mp3" data-thumbnail="image/img.jpeg">39</option>
+      <option value="audio/40.mp3" data-thumbnail="image/img.jpeg">40</option>
+      <option value="audio/41.mp3" data-thumbnail="image/img.jpeg">41</option>
+      <option value="audio/42.mp3" data-thumbnail="image/img.jpeg">42</option>
+      <option value="audio/43.mp3" data-thumbnail="image/img.jpeg">43</option>
+      <option value="audio/44.mp3" data-thumbnail="image/img.jpeg">44</option>
+      <option value="audio/45.mp3" data-thumbnail="image/img.jpeg">45</option>
+      <option value="audio/46.mp3" data-thumbnail="image/img.jpeg">46</option>
+      <option value="audio/47.mp3" data-thumbnail="image/img.jpeg">47</option>
+      <option value="audio/48.mp3" data-thumbnail="image/img.jpeg">48</option>
+    </select>
+<audio id="audio" controls>
+      Your browser does not support the audio element.
+    </audio>
+    <button id="random-button">Play Random Song</button>
+    <div id="song-list"></div>
+    <div id="current-song"></div>
+    <div class="navigation-buttons">
+      <button id="play-previous">Play Previous</button>
+      <button id="play-next">Play Next</button>
+    </div>
+  </div>
+  <script>
+const audio = document.getElementById("audio");
+const audioSelect = document.getElementById("audio-select");
+const randomButton = document.getElementById("random-button");
+const songListElement = document.getElementById("song-list");
+const currentSongElement = document.getElementById("current-song");
+const playPreviousButton = document.getElementById("play-previous");
+const playNextButton = document.getElementById("play-next");
+
+randomButton.addEventListener("click", playRandomSong);
+
+playPreviousButton.addEventListener("click", playPreviousSong);
+playNextButton.addEventListener("click", playNextSong);
+
+audioSelect.addEventListener("change", function() {
+  playSelectedSong();
+});
+
+function updateSongList() {
+  songListElement.innerHTML = "";
+  Array.from(audioSelect.options).forEach((option, index) => {
+    const songName = option.textContent;
+    const thumbnailUrl = option.getAttribute("data-thumbnail");
+
+    const listItem = document.createElement("div");
+    listItem.classList.add("song-item");
+
+    const thumbnail = document.createElement("img");
+    thumbnail.src = thumbnailUrl;
+    thumbnail.alt = "Thumbnail";
+
+    const songText = document.createElement("span");
+    songText.textContent = songName;
+
+    listItem.appendChild(thumbnail);
+    listItem.appendChild(songText);
+    songListElement.appendChild(listItem);
+
+    listItem.addEventListener("click", function() {
+      audioSelect.selectedIndex = index;
+      playSelectedSong();
+      updateSongList();
+    });
+
+    if (index === audioSelect.selectedIndex) {
+      listItem.classList.add("playing");
+      currentSongElement.textContent = songName;
+    }
+  });
+}
+
+function playSelectedSong() {
+  const selectedOption = audioSelect.options[audioSelect.selectedIndex];
+  audio.src = selectedOption.value;
+  audio.load();
+  audio.play();
+
+  const previouslySelectedSongItem = document.querySelector('.song-item.playing');
+  if (previouslySelectedSongItem){
+	  previouslySelectedSongItem.classList.remove('playing');
+  }
+  const currentSongItem = document.querySelector('[data-index="${audioSelect.selectedIndex}"]');
+  if (currentSongItem) {
+	  currentSongItem.classList.add('playing');
+}
+updateSongList();
+}
+
+function playRandomSong() {
+  const randomIndex = Math.floor(Math.random() * audioSelect.options.length);
+  audioSelect.selectedIndex = randomIndex;
+  playSelectedSong();
+  updateSongList();
+}
+
+function playPreviousSong() {
+  if (audioSelect.selectedIndex > 0) {
+    audioSelect.selectedIndex--;
+  } else {
+    audioSelect.selectedIndex = audioSelect.options.length - 1;
+  }
+  playSelectedSong();
+  updateSongList();
+}
+
+function playNextSong() {
+  if (audioSelect.selectedIndex < audioSelect.options.length - 1) {
+    audioSelect.selectedIndex++;
+  } else {
+    audioSelect.selectedIndex = 0;
+  }
+  playSelectedSong();
+  updateSongList();
+}
+
+updateSongList();
+audio.addEventListener("play", () => {
+	console.log("Audio is playing");
+});
+
+audio.addEventListener("pause", () => {
+	console.log("Audio is paused");
+});
+audio.addEventListener("ended", () => {
+	console.log("Audio has ended");
+});
+
+  </script>
+</body>
+</html>
